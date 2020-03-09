@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Film List</ion-title>
+    <ion-buttons slot="end">
+      <ion-button routerLink="/create">
+        <ion-icon slot="icon-only" name="add"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content padding>
+  <ion-card
+    *ngFor="let film of filmList | async"
+    routerLink="/detail/{{film.id}}"
+  >    
+    <ion-card-header>
+      <img src="{{film.imagen}}">
+      <br><br>
+      {{ film.filmDescription }}
+    </ion-card-header>
+    
+   
+    <ion-card-content>
+      Film description: {{ film.filmName }}
+
+      <br><br>
+
+      Date: {{ film.fecha | date:'short'}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title><a href="https://github.com/Albertobf22/HitoIonic">GitHub</a></ion-title>
+  </ion-toolbar>
+</ion-footer>

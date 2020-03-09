@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Description</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding style="margin:10%; ">
+
+  <h3>    {{ (film | async)?.filmDescription }}
+  </h3>
+
+  <img src="{{ (film | async)?.imagen }}">
+  <br><br>
+
+  <ion-button (click)="deleteFilm()">
+    DELETE FILM
+  </ion-button>
+  <ion-button>
+    UPDATE FILM
+  </ion-button>
+
+  
+</ion-content>

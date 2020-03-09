@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Films</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="createFilmForm" (submit)="createFilm()">
+    <ion-item>
+      <ion-label stacked>Film Name</ion-label>
+      <ion-input
+        formControlName="filmName"
+        type="text"
+        
+      >
+      </ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label stacked>Film Description</ion-label>
+      <ion-textarea
+        formControlName="filmDescription"
+        type="text"
+      >
+      </ion-textarea>
+    </ion-item>
+
+    <ion-item>
+      <ion-label stacked>Film Picture</ion-label>
+      <ion-textarea
+        formControlName="imagen"
+        type="text"
+      >
+      </ion-textarea>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" [disabled]="!createFilmForm.valid">
+      Add Film
+    </ion-button>
+  </form>
+</ion-content>
